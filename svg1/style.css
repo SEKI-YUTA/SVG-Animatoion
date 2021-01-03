@@ -1,0 +1,41 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.wrapper {
+  width: 100%;
+  height: 100vh;
+  background: rgb(218, 218, 218);
+}
+.container {
+  width: 600px;
+  margin: 0 auto;
+}
+.container svg {
+  margin-top: 150px;
+}
+.container svg path {
+  fill: #000;
+  fill-opacity: 0;
+  stroke: #ffffff;
+  stroke-width: 2px;
+  stroke-opacity: 0.6;
+  /* stroke-linejoin: round; */
+  stroke-dasharray: 310;  /*まずここだけで文字が表示される数字を探す*/
+  stroke-dashoffset: 310; /*次に消える数字を探す（数値が大きいほど消える）大体dasharrayと同じ*/
+  animation: 2s ease-in forwards 0.1s textAnim;
+}
+
+@keyframes textAnim {
+  0% {
+    stroke-dashoffset: 310;
+  }
+  80% {
+    stroke-dashoffset: 0;
+    fill-opacity: 0;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    fill-opacity: 1;
+  }
+}
